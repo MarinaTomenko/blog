@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,13 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+//Route::get('/', 'PostController@index');
+//Route::get('blog-app',[PostController::class, 'index']);
+Route::get('/',PostController::class . '@index');
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');

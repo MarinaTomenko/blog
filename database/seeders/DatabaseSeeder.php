@@ -18,5 +18,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(UserTableSeeder::class);
+        $this->command->info('Таблица пользователей загружена данными!');
+
+        $this->call(PostTableSeeder::class);
+        $this->command->info('Таблица постов блога загружена данными!');
+
     }
 }
