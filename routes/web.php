@@ -20,7 +20,10 @@ use App\Http\Controllers\PostController;
 
 //Route::get('/', 'PostController@index');
 //Route::get('blog-app',[PostController::class, 'index']);
-Route::get('/',PostController::class . '@index');
+Route::get('/',PostController::class . '@index')->name('blog.index');
+
+Route::get('post/index', 'PostController@index')->name('post.index');
+Route::get('post/search', 'PostController@search')->name('post.search');
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
