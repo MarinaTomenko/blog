@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@extends('layouts.site')
+
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -25,6 +27,3 @@
         </div>
     </div>
 @endsection
-
-<a href="{{ route('post.show', ['id' => $post->post_id]) }}" class="btn btn-dark float-right">Читать дальше</a>
-

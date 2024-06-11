@@ -212,4 +212,14 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+   /* 'providers' => [
+        
+        Intervention\Image\ImageServiceProvider::class,
+    ],
+    
+    'aliases' => [
+        
+        'Image' => Intervention\Image\Facades\Image::class,
+    ] */
+
 ];
