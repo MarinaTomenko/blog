@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('layouts.site')
-
 @section('content')
     <div class="row">
         <div class="col-12">

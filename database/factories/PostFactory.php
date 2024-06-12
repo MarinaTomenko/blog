@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Post;
+use App\Models\Post;
 use Faker\Generator as Faker;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -31,6 +31,8 @@ class PostFactory extends Factory
         'body' => $faker->realText(rand(200, 300)),
         'created_at' => $faker->dateTimeBetween('-60 days', '-30 days'),
         'updated_at' => $faker->dateTimeBetween('-20 days', '-1 days'),
+        
+
 
     ];
 });

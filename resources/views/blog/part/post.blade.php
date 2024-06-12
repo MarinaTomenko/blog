@@ -3,7 +3,11 @@
         <h2>{{ $post->name }}</h2>
     </div>
     <div class="card-body">
-        <img src="https://via.placeholder.com/1000x300" alt="" class="img-fluid">
+        @if ($post->image)
+            <img src="{{ asset('storage/post/image/'.$post->image) }}" alt="" class="img-fluid" />
+        @else
+            <img src="http://via.placeholder.com/1000x300" alt="" class="img-fluid">
+        @endif
         <p class="mt-3 mb-0">{{ $post->excerpt }}</p>
     </div>
     <div class="card-footer">
@@ -26,7 +30,7 @@
         <div class="card-footer">
             Теги:
             @foreach($post->tags as $tag)
-                @php $comma = $loop->last ? '' : ' • ' @endphp
+                @php($comma = $loop->last ? '' : ' • ')
                 <a href="{{ route('blog.tag', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
                 {{ $comma }}
             @endforeach

@@ -27,4 +27,6 @@ class Post extends Model {
     public function scopePublished($builder) {
         return $builder->whereNotNull('published_by');
     }
+
+    
 }   
